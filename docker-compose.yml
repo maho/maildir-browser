@@ -4,9 +4,9 @@ services:
   dovecot:
     image: ajoergensen/dovecot-mailarchive
     volumes:
-      - "./storage:/home/app"
+      - "${MAILDIR_ARCHIVE_DIR?specify maildir archive dir}:/home/app"
     environment:
-      MAILPASSWORD: foobar
+      MAIL_PASSWORD: foobar
 
   roundcube:
     depends_on:
