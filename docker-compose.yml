@@ -1,0 +1,19 @@
+version: "3.9"
+
+services:
+  dovecot:
+    image: ajoergensen/dovecot-mailarchive
+    volumes:
+      - "./storage:/home/app"
+    environment:
+      MAILPASSWORD: foobar
+
+  roundcube:
+    depends_on:
+      - dovecot
+    image: roundcube/roundcubemail
+    environment:
+      ROUNDCUBEMAIL_DEFAULT_HOST: dovecot
+    ports:
+      - "9091:80"
+
