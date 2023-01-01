@@ -14,7 +14,7 @@ Prepare maildir archive:
 * put all your maildir files into `/tmp/maildir-archive/Maildir` in such way that files
   free may look like that:
 
-  ```
+```
   └── Maildir
     ├── .attic
     │   ├── cur
@@ -33,10 +33,11 @@ Prepare maildir archive:
     │   │   ├── 1356137991.P3919Q20.my.mailhost.com:2,RSa
     │   │   ├── 1356137991.P3919Q21.my.mailhost.com:2,S
     [... lot of other files and directories ..]
- ```
+```
 
-Run dovecot and roundcube
--------------------------
+
+## Run dovecot and roundcube
+
 
 ```
  MAILDIR_BROWSER_DOVECOT_PASSWORD=foobar \
@@ -44,8 +45,8 @@ Run dovecot and roundcube
     docker-compose up
 ```
 
-Open roundcube in browser
--------------------------
+## Open roundcube in browser
+
 
 * go to http://localhost:9091/
 * authenticate u:app p:foobar (or whatever you specify as
