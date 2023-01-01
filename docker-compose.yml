@@ -6,7 +6,7 @@ services:
     volumes:
       - "${MAILDIR_ARCHIVE_DIR?specify maildir archive dir}:/home/app"
     environment:
-      MAIL_PASSWORD: foobar
+      MAIL_PASSWORD: "${MAILDIR_BROWSER_DOVECOT_PASSWORD?specify dovecot password}"
 
   roundcube:
     depends_on:
